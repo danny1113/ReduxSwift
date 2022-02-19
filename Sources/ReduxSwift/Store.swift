@@ -15,7 +15,7 @@ public typealias Reducer<State, Action, Environment> = (inout State, Action, Env
 final public class Store<State, Action, Environment>: ObservableObject {
 
     @Published public private(set) var state: State
-    public var environment: Environment
+    @Published public var environment: Environment
 
     private let reducer: Reducer<State, Action, Environment>
     private var cancellables = Set<AnyCancellable>()
